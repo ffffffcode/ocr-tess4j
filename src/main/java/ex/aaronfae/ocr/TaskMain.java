@@ -15,7 +15,8 @@ public class TaskMain {
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(10);
         List<Future<String>> results = new ArrayList<Future<String>>();
 
-        File fileDir = new File("output-data");
+        File fileDir = new File("output-dataJPGAndScale");
+//        File fileDir = new File("output-dataJPG");
         File[] files = fileDir.listFiles();
         long startTime = System.currentTimeMillis();
         for (File file : files) {
@@ -29,7 +30,8 @@ public class TaskMain {
 
         while (true) {
             if (fixedThreadPool.isTerminated()) {
-                ExcelUtil.StringFutureListToExcel(results);
+                ExcelUtil.StringFutureListToExcelByPolish("output-dataJPGAndScale.xls", results);
+//                ExcelUtil.StringFutureListToExcel("output-dataJPG.xls", results);
                 System.out.println("运行时间：" + (System.currentTimeMillis() - startTime) / 1000);
                 break;
             }

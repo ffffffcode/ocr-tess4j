@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.jhlbas.image;
+package com.jhlabs.image;
 
 /**
  * A filter which replaces one color by another in an image. This is frankly,

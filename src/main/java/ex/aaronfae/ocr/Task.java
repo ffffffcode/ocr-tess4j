@@ -1,6 +1,5 @@
 package ex.aaronfae.ocr;
 
-import ex.aaronfae.util.ImageUtil;
 import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 
@@ -22,9 +21,10 @@ public class Task implements Callable<String> {
         ITesseract instance = new Tesseract();
         instance.setLanguage("chi_sim");
         try {
-            BufferedImage image = ImageIO.read(file).getSubimage(0, 0, 520, 80);
-            BufferedImage target = ImageUtil.filter(image);
-            String content = instance.doOCR(target);
+            BufferedImage image = ImageIO.read(file);
+//            BufferedImage target = ImageUtil.filter(image);
+            String content = instance.doOCR(image);
+            System.out.println(content);
             return content;
         } catch (Exception e) {
             System.out.println("无法识别：" + file.getName());

@@ -23,11 +23,11 @@ public class Output implements Runnable {
         try {
             BufferedImage image = ImageIO.read(file).getSubimage(0, 0, 520, 80);
             BufferedImage target = ImageUtil.filter(image);
-            File targetDir = new File("output-data");
+            File targetDir = new File("output-dataJPG");
             if (!targetDir.exists()) {
                 targetDir.mkdir();
             }
-            ImageIO.write(target, "png", new File(targetDir, file.getName()));
+            ImageIO.write(target, "jpg", new File(targetDir, file.getName().replace("png", "jpg")));
         } catch (Exception e) {
             e.printStackTrace();
         }

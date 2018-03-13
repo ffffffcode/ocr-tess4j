@@ -27,3 +27,5 @@ output-data/
 target/
 orc-tess4j.iml
 src/test/
+output-dataJPG/
+output-dataJPGAndScale/

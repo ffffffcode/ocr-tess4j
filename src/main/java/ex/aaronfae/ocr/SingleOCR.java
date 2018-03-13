@@ -9,10 +9,10 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class SingleORC {
+public class SingleOCR {
 
     public static void main(String[] args) {
-        File imageFile = new File("test-data/1.png");
+        File imageFile = new File("test-data/test2.jpg");
         ITesseract instance = new Tesseract();
         instance.setLanguage("chi_sim");
         try {
